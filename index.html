@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTW App Template</title>
     <style>
-        body{
-           font-family: 'Courier New', Courier, monospace'; 
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
         }
-        .containar{
-            width: 300px;margin: 20px auto ;background-color: silver;
-        }
-        .but{
-            float: left;
-            height: 50px;
-            width: 50px;
-            padding: 5px;
-            margin: 5px;
-            background-color: gray;
-            border-radius:5px;
 
+        input {
+            width: 225px;
+            padding: 10px;
+            font-size: 16px;
         }
-        .but:hover{
-            background-color: black;
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 16px;
+            margin: 5px;
         }
     </style>
 </head>
@@ -31,22 +30,31 @@
 <body>
 
     <!-- your app code goes here -->
-    <div class="containar">
-        <div class="but">yey</div>
-        <div class="but">1</div>
-        <div class="but">2</div>
-        <div class="but">3</div>
-        <div class="but">4</div>
-        <div class="but">5</div>
-        <div class="but">6</div>
-        <div class="but">7</div>
-        <div class="but">8</div>
-        <div class="but">9</div>
-        <div class="but">0</div>
-        <div class="but">+</div>
-        <div class="but">-</div>
-        <div style="clear:both"></div>
-    </div>
+    <form name="calculator">
+        <input type="text" name="display" id="display" disabled>
+        <br>
+        <button type="button">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button">/</button>
+        <br>
+        <button type="button">4</button>
+        <button type="button">5</button>
+        <button type="button">6</button>
+        <button type="button">*</button>
+        <br>
+        <button type="button">7</button>
+        <button type="button">8</button>
+        <button type="button">9</button>
+        <button type="button">-</button>
+        <br>
+        <button type="button">0</button>
+        <button type="button">.</button>
+        <button type="button">=</button>
+        <button type="button">+</button>
+        <br>
+        <button type="button">C</button>
+    </form>
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
         // custom config for the MTW app 
