@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTW App Template</title>
+    <style>
+        body{
+           font-family: 'Courier New', Courier, monospace'; 
+        }
+        .containar{
+            width: 300px;margin: 20px auto ;background-color: silver;
+        }
+        .but{
+            float: left;
+            height: 50px;
+            width: 50px;
+            padding: 5px;
+            margin: 5px;
+            background-color: gray;
+            border-radius:5px;
+
+        }
+        .but:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- your app code goes here -->
+    <div class="containar">
+        <div class="but">1</div>
+        <div class="but">2</div>
+        <div class="but">3</div>
+        <div class="but">4</div>
+        <div class="but">5</div>
+        <div class="but">6</div>
+        <div class="but">7</div>
+        <div class="but">8</div>
+        <div class="but">9</div>
+        <div class="but">0</div>
+        <div class="but">+</div>
+        <div class="but">-</div>
+        <div style="clear:both"></div>
+    </div>
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
+
+        ///////////////////////////////////////////////////////
+        // implement this functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }        
+
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
+
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            //sendRequestToParent({ method: 'getAssets' })
+        })
+
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
+
+</html>
