@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="calc.css">
+        <script src="calc_js.js" defer></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTW App Template</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
+    <body>
+        <h1>Calculator</h1>
+        <form name="calculator">
+            <input type="text" name="display" id="display" value="0" disabled>
+            <br>
+            <button type="button" class="special delete" onclick="clearMemory()">MC</button>
+            <button type="button" class="special" onclick="recallMemory()">MR</button>
+            <button type="button" class="special" onclick="addToMemory()">M+</button>
+            <button type="button" class="special" onclick="subtractFromMemory()">M-</button>
+            <button type="button" class="special" onclick="setMemory()">MS</button>
+            <br>
+            <button type="button" class="operations" >2<sup>nd</sup></button>
+            <button type="button" class="operations" onclick="appendCharacter('Math.PI')">π</button>
+            <button type="button" class="operations" onclick="appendCharacter('Math.E')">e</button>
+            <button type="button" class="operations delete" onclick="clearDisplay()">C</button>
+            <button type="button" class="operations" onclick="deleteLastCharacter()">DEL</button>
+            <br>
+            <button type="button" class="operations" onclick="appendCharacter('**2')">x<sup>2</sup></button>
+            <button type="button" class="operations" onclick="reciprocal()">1/x</button>
+            <button type="button" class="operations" onclick="absolute()">|x|</button>
+            <button type="button" class="operations" onclick="appendCharacter('Math.exp(')">exp</button>
+            <button type="button" class="operations" onclick="appendCharacter('%')">mod</button>
+            <br>
+            <button type="button" class="operations" onclick="squareRoot()">√</button>
+            <button type="button" class="operations" onclick="appendCharacter('(')">(</button>
+            <button type="button" class="operations" onclick="appendCharacter(')')">)</button>
+            <button type="button" class="operations" onclick="factorial()">n!</button>
+            <button type="button" class="operations" onclick="appendCharacter('/')">/</button>
+            <br>
+            <button type="button" class="operations" onclick="appendCharacter('**')">x<sup>y</sup></button>
+            <button type="button" class="num" onclick="appendCharacter('7')">7</button>
+            <button type="button" class="num" onclick="appendCharacter('8')">8</button>
+            <button type="button" class="num" onclick="appendCharacter('9')">9</button>
+            <button type="button" class="operations" onclick="appendCharacter('*')">x</button>
+            <br>
+            <button type="button" class="operations" onclick="powerOfTen()">10<sup>x</sup></button>
+            <button type="button" class="num" onclick="appendCharacter('4')">4</button>
+            <button type="button" class="num" onclick="appendCharacter('5')">5</button>
+            <button type="button" class="num" onclick="appendCharacter('6')">6</button>
+            <button type="button" class="operations" onclick="appendCharacter('-')">-</button>
+            <br>
+            <button type="button" class="operations" onclick="appendCharacter('Math.log10(')">log</button>
+            <button type="button" class="num" onclick="appendCharacter('1')">1</button>
+            <button type="button" class="num" onclick="appendCharacter('2')">2</button>
+            <button type="button" class="num" onclick="appendCharacter('3')">3</button>
+            <button type="button" class="operations" onclick="appendCharacter('+')">+</button>
+            <br>
+            <button type="button" class="operations" onclick="appendCharacter('Math.log(')">ln</button>
+            <button type="button" class="num" onclick="changeSign()">+/-</button>
+            <button type="button" class="num" onclick="appendCharacter('0')">0</button>
+            <button type="button" class="num" onclick="appendCharacter('.')">.</button>
+            <button type="button" class="operations equals" onclick="calculateResult()">=</button>
+            <br>
+        </form>
+        <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+        <script>
+            // custom config for the MTW app 
+            const mtwAppConfig = {
+                border: true // app border in the MTW page                    
+            }
 
-        input {
-            width: 225px;
-            padding: 10px;
-            font-size: 16px;
-        }
+            ///////////////////////////////////////////////////////
+            // implement this functions in order to use private API        
+            const sendPrivateApiRequest = async () => {
+                // your code here:
+                // sendRequestToParent({ cat: 'getAssets' })
+            }        
 
-        button {
-            width: 50px;
-            height: 50px;
-            font-size: 16px;
-            margin: 5px;
-        }
-    </style>
-</head>
+            const acceptPrivateApiResponse = async (data) => {
+                // process received data here:
+                // console.log(data)
+            }
 
-<body>
+            // use this in order to send on document load
+            document.addEventListener('DOMContentLoaded', () => {
+                // your code here:
+                //sendRequestToParent({ method: 'getAssets' })
+            })
 
-    <!-- your app code goes here -->
-    <form name="calculator">
-        <input type="text" name="display" id="display" disabled>
-        <br>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button">/</button>
-        <br>
-        <button type="button">4</button>
-        <button type="button">5</button>
-        <button type="button">6</button>
-        <button type="button">*</button>
-        <br>
-        <button type="button">7</button>
-        <button type="button">8</button>
-        <button type="button">9</button>
-        <button type="button">-</button>
-        <br>
-        <button type="button">0</button>
-        <button type="button">.</button>
-        <button type="button">=</button>
-        <button type="button">+</button>
-        <br>
-        <button type="button">C</button>
-    </form>
-    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
-    <script>
-        // custom config for the MTW app 
-        const mtwAppConfig = {
-            border: true // app border in the MTW page                    
-        }
-
-        ///////////////////////////////////////////////////////
-        // implement this functions in order to use private API        
-        const sendPrivateApiRequest = async () => {
-            // your code here:
-            // sendRequestToParent({ cat: 'getAssets' })
-        }        
-
-        const acceptPrivateApiResponse = async (data) => {
-            // process received data here:
-            // console.log(data)
-        }
-
-        // use this in order to send on document load
-        document.addEventListener('DOMContentLoaded', () => {
-            // your code here:
-            //sendRequestToParent({ method: 'getAssets' })
-        })
-
-    </script>
-    <script src="https://morethanwallet.com/appstore/index.js"></script>
-</body>
-
+        </script>
+        <script src="https://morethanwallet.com/appstore/index.js"></script>
+    </body>
 </html>

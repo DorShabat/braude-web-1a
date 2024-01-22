@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: monospace;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 40px; 
+}
+
+form {
+    background-color: #ebeaea; 
+    width: 600px; 
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+input {
+    width: 450px;
+    height: 40px; /* Slightly reduced height */
+    padding: 10px;
+    font-size: 22px;
+    margin: 8px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    background-color: white;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 20px; /* Larger font size for buttons */
+    width: 80px; /* Fixed width for buttons */
+    height: 40px; /* Fixed height for buttons */
+    margin: 1px;
+    padding: 0;
+    border: none; /* Remove border */
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #a8a8a8; /* Light gray on hover */
+}
+
+.num {
+    background-color: #fff; /* White background for number buttons */
+}
+
+.special {
+    background-color: #ffe761; /* Yellow background for special buttons */
+}
+.special:hover{
+    background-color: #ffd000c5; /* Yellow background for special buttons */
+}
+
+.operations {
+    background-color: #cac9c9; /* Light gray background for operation buttons */
+}
+
+
+.delete:hover{
+    background-color: red; /* Light gray background for operation buttons */
+}
+.equals:hover{
+    background-color: rgb(0, 149, 218); /* Light gray background for operation buttons */
+}
